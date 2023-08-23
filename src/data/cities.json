@@ -1,0 +1,1038 @@
+[
+  {
+    "name": "Riyadh",
+    "nameAr": "الرياض",
+    "cCode": "01",
+    "id": 1,
+    "refId": null
+  },
+  {
+    "name": "Ad Diriyah",
+    "nameAr": "الدرعية",
+    "cCode": "02",
+    "id": 2,
+    "refId": null
+  },
+  {
+    "name": "Al-Kharj",
+    "nameAr": "الخرج",
+    "cCode": "03",
+    "id": 3,
+    "refId": null
+  },
+  {
+    "name": "Ad Dawadimi",
+    "nameAr": "الدوادمي",
+    "cCode": "04",
+    "id": 4,
+    "refId": null
+  },
+  {
+    "name": "Al Majmaah",
+    "nameAr": "المجمعة",
+    "cCode": "05",
+    "id": 5,
+    "refId": null
+  },
+  {
+    "name": "Al-Quwayiyah",
+    "nameAr": "القويعية",
+    "cCode": "06",
+    "id": 6,
+    "refId": null
+  },
+  {
+    "name": "Al-Aflaj",
+    "nameAr": "الأفلاج",
+    "cCode": "07",
+    "id": 7,
+    "refId": null
+  },
+  {
+    "name": "Wadi ad-Dawasir",
+    "nameAr": "وادي الدواسر",
+    "cCode": "08",
+    "id": 8,
+    "refId": null
+  },
+  {
+    "name": "Al Zulfi",
+    "nameAr": "الزلفي",
+    "cCode": "09",
+    "id": 9,
+    "refId": null
+  },
+  {
+    "name": "Shaqraa",
+    "nameAr": "شقراء",
+    "cCode": "10",
+    "id": 10,
+    "refId": null
+  },
+  {
+    "name": "Hotat Bani Tamim",
+    "nameAr": "حوطة بني تميم",
+    "cCode": "11",
+    "id": 11,
+    "refId": null
+  },
+  {
+    "name": "Afif",
+    "nameAr": "عفيف",
+    "cCode": "12",
+    "id": 12,
+    "refId": null
+  },
+  {
+    "name": "Al-Ghat",
+    "nameAr": "الغاط",
+    "cCode": "13",
+    "id": 13,
+    "refId": null
+  },
+  {
+    "name": "As Sulayyil",
+    "nameAr": "السليل",
+    "cCode": "14",
+    "id": 14,
+    "refId": null
+  },
+  {
+    "name": "Dhurma",
+    "nameAr": "ضرما",
+    "cCode": "15",
+    "id": 15,
+    "refId": null
+  },
+  {
+    "name": "Al-Muzahmiyya",
+    "nameAr": "المزاحمية",
+    "cCode": "16",
+    "id": 16,
+    "refId": null
+  },
+  {
+    "name": "Romah",
+    "nameAr": "رماح",
+    "cCode": "17",
+    "id": 17,
+    "refId": null
+  },
+  {
+    "name": "Thadig",
+    "nameAr": "ثادق",
+    "cCode": "18",
+    "id": 18,
+    "refId": null
+  },
+  {
+    "name": "Huraymila",
+    "nameAr": "حريملاء",
+    "cCode": "19",
+    "id": 19,
+    "refId": null
+  },
+  {
+    "name": "Al Hareeq",
+    "nameAr": "الحريق",
+    "cCode": "20",
+    "id": 20,
+    "refId": null
+  },
+  {
+    "name": "Marat",
+    "nameAr": "مرات",
+    "cCode": "21",
+    "id": 21,
+    "refId": null
+  },
+  {
+    "name": "Makkah",
+    "nameAr": "مكة المكرمة",
+    "cCode": "01",
+    "id": 22,
+    "refId": null
+  },
+  {
+    "name": "Jeddah",
+    "nameAr": "جدة",
+    "cCode": "02",
+    "id": 23,
+    "refId": null
+  },
+  {
+    "name": "Taif",
+    "nameAr": "الطائف",
+    "cCode": "03",
+    "id": 24,
+    "refId": null
+  },
+  {
+    "name": "Al Qunfudhah",
+    "nameAr": "القنفذة",
+    "cCode": "04",
+    "id": 25,
+    "refId": null
+  },
+  {
+    "name": "Al Lith",
+    "nameAr": "الليث",
+    "cCode": "05",
+    "id": 26,
+    "refId": null
+  },
+  {
+    "name": "Rabigh",
+    "nameAr": "رابغ",
+    "cCode": "06",
+    "id": 27,
+    "refId": null
+  },
+  {
+    "name": "Khulais",
+    "nameAr": "خليص",
+    "cCode": "07",
+    "id": 28,
+    "refId": null
+  },
+  {
+    "name": "AlKhurmah",
+    "nameAr": "الخرمة",
+    "cCode": "08",
+    "id": 29,
+    "refId": null
+  },
+  {
+    "name": "Raniah",
+    "nameAr": "رنية",
+    "cCode": "09",
+    "id": 30,
+    "refId": null
+  },
+  {
+    "name": "Tarabah",
+    "nameAr": "تربة",
+    "cCode": "10",
+    "id": 31,
+    "refId": null
+  },
+  {
+    "name": "Aljmom",
+    "nameAr": "الجموم",
+    "cCode": "11",
+    "id": 32,
+    "refId": null
+  },
+  {
+    "name": "Al Kaml",
+    "nameAr": "الكامل",
+    "cCode": "12",
+    "id": 33,
+    "refId": null
+  },
+  {
+    "name": "Al Muwaih",
+    "nameAr": "المويه",
+    "cCode": "13",
+    "id": 34,
+    "refId": null
+  },
+  {
+    "name": "Maysan",
+    "nameAr": "ميسان",
+    "cCode": "14",
+    "id": 35,
+    "refId": null
+  },
+  {
+    "name": "Adham",
+    "nameAr": "أضم",
+    "cCode": "15",
+    "id": 36,
+    "refId": null
+  },
+  {
+    "name": "Al Ertheyat",
+    "nameAr": "العرضيات",
+    "cCode": "16",
+    "id": 37,
+    "refId": null
+  },
+  {
+    "name": "Bahra",
+    "nameAr": "بحرة",
+    "cCode": "17",
+    "id": 38,
+    "refId": null
+  },
+  {
+    "name": "Madina",
+    "nameAr": "المدينة المنورة",
+    "cCode": "01",
+    "id": 39,
+    "refId": null
+  },
+  {
+    "name": "Yanbu",
+    "nameAr": "ينبع",
+    "cCode": "02",
+    "id": 40,
+    "refId": null
+  },
+  {
+    "name": "Al Ula",
+    "nameAr": "العلا",
+    "cCode": "03",
+    "id": 41,
+    "refId": null
+  },
+  {
+    "name": "AlMahd",
+    "nameAr": "مهد الذهب",
+    "cCode": "04",
+    "id": 42,
+    "refId": null
+  },
+  {
+    "name": "Al Hanakia",
+    "nameAr": "الحناكية",
+    "cCode": "05",
+    "id": 43,
+    "refId": null
+  },
+  {
+    "name": "Badr",
+    "nameAr": "بدر",
+    "cCode": "06",
+    "id": 44,
+    "refId": null
+  },
+  {
+    "name": "Khaybar",
+    "nameAr": "خيبر",
+    "cCode": "07",
+    "id": 45,
+    "refId": null
+  },
+  {
+    "name": "Al Ais",
+    "nameAr": "العيص",
+    "cCode": "08",
+    "id": 46,
+    "refId": null
+  },
+  {
+    "name": "Wadi Alfare",
+    "nameAr": "وادي الفرع",
+    "cCode": "09",
+    "id": 47,
+    "refId": null
+  },
+  {
+    "name": "Buraidah",
+    "nameAr": "بريدة",
+    "cCode": "01",
+    "id": 48,
+    "refId": null
+  },
+  {
+    "name": "Unaizah",
+    "nameAr": "عنيزة",
+    "cCode": "02",
+    "id": 49,
+    "refId": null
+  },
+  {
+    "name": "Ar Rass",
+    "nameAr": "الرس",
+    "cCode": "03",
+    "id": 50,
+    "refId": null
+  },
+  {
+    "name": "Al Methnb",
+    "nameAr": "المذنب",
+    "cCode": "04",
+    "id": 51,
+    "refId": null
+  },
+  {
+    "name": "Al Bukairiyah",
+    "nameAr": "البكيرية",
+    "cCode": "05",
+    "id": 52,
+    "refId": null
+  },
+  {
+    "name": "Al Badayea",
+    "nameAr": "البدائع",
+    "cCode": "06",
+    "id": 53,
+    "refId": null
+  },
+  {
+    "name": "Al-Asyeah",
+    "nameAr": "الأسياح",
+    "cCode": "07",
+    "id": 54,
+    "refId": null
+  },
+  {
+    "name": "An Nabhaniyah",
+    "nameAr": "النبهانية",
+    "cCode": "08",
+    "id": 55,
+    "refId": null
+  },
+  {
+    "name": "A Shimasiyah",
+    "nameAr": "الشماسية",
+    "cCode": "09",
+    "id": 56,
+    "refId": null
+  },
+  {
+    "name": "Uyun AlJiwa",
+    "nameAr": "عيون الجواء",
+    "cCode": "10",
+    "id": 57,
+    "refId": null
+  },
+  {
+    "name": "Riyadh Al Khabra",
+    "nameAr": "رياض الخبراء",
+    "cCode": "11",
+    "id": 58,
+    "refId": null
+  },
+  {
+    "name": "Oqlatu Soqoor",
+    "nameAr": "عقلة الصقور",
+    "cCode": "12",
+    "id": 59,
+    "refId": null
+  },
+  {
+    "name": "Daryah",
+    "nameAr": "ضرية",
+    "cCode": "13",
+    "id": 60,
+    "refId": null
+  },
+  {
+    "name": "Dammam",
+    "nameAr": "الدمام",
+    "cCode": "01",
+    "id": 61,
+    "refId": null
+  },
+  {
+    "name": "Al Ahsa",
+    "nameAr": "الأحساء",
+    "cCode": "02",
+    "id": 62,
+    "refId": null
+  },
+  {
+    "name": "Hafar Al-Batin",
+    "nameAr": "حفر الباطن",
+    "cCode": "03",
+    "id": 63,
+    "refId": null
+  },
+  {
+    "name": "Jubail ",
+    "nameAr": "الجبيل",
+    "cCode": "04",
+    "id": 64,
+    "refId": null
+  },
+  {
+    "name": "Al Qatif",
+    "nameAr": "القطيف",
+    "cCode": "05",
+    "id": 65,
+    "refId": null
+  },
+  {
+    "name": "Khobar",
+    "nameAr": "الخبر",
+    "cCode": "06",
+    "id": 66,
+    "refId": null
+  },
+  {
+    "name": "Al Khafji",
+    "nameAr": "الخفجي",
+    "cCode": "07",
+    "id": 67,
+    "refId": null
+  },
+  {
+    "name": "Ras Tanura",
+    "nameAr": "رأس تنورة",
+    "cCode": "08",
+    "id": 68,
+    "refId": null
+  },
+  {
+    "name": "Abqaiq",
+    "nameAr": "بقبق",
+    "cCode": "09",
+    "id": 69,
+    "refId": null
+  },
+  {
+    "name": "Nariyah",
+    "nameAr": "النعيرية",
+    "cCode": "10",
+    "id": 70,
+    "refId": null
+  },
+  {
+    "name": "Qaryat al-Ulya",
+    "nameAr": "قرية العليا",
+    "cCode": "11",
+    "id": 71,
+    "refId": null
+  },
+  {
+    "name": "Al Udeid",
+    "nameAr": "العديد",
+    "cCode": "12",
+    "id": 72,
+    "refId": null
+  },
+  {
+    "name": "Dhahran",
+    "nameAr": "الظهران",
+    "cCode": "13",
+    "id": 73,
+    "refId": null
+  },
+  {
+    "name": "Abha",
+    "nameAr": "أبها",
+    "cCode": "01",
+    "id": 74,
+    "refId": null
+  },
+  {
+    "name": "Khamis Mushait",
+    "nameAr": "خميس مشيط",
+    "cCode": "02",
+    "id": 75,
+    "refId": null
+  },
+  {
+    "name": "Bisha",
+    "nameAr": "بيشة",
+    "cCode": "03",
+    "id": 76,
+    "refId": null
+  },
+  {
+    "name": "Namas",
+    "nameAr": "النماص",
+    "cCode": "04",
+    "id": 77,
+    "refId": null
+  },
+  {
+    "name": "Muhayil",
+    "nameAr": "محايل عسير",
+    "cCode": "05",
+    "id": 78,
+    "refId": null
+  },
+  {
+    "name": "Dhahran Aljanoub",
+    "nameAr": "ظهران الجنوب",
+    "cCode": "06",
+    "id": 79,
+    "refId": null
+  },
+  {
+    "name": "Tathlith",
+    "nameAr": "تثليث",
+    "cCode": "07",
+    "id": 80,
+    "refId": null
+  },
+  {
+    "name": "Sarat Obeida",
+    "nameAr": "سراة عبيدة",
+    "cCode": "08",
+    "id": 81,
+    "refId": null
+  },
+  {
+    "name": "Regal Alma",
+    "nameAr": "رجال ألمع",
+    "cCode": "09",
+    "id": 82,
+    "refId": null
+  },
+  {
+    "name": "Balgarn",
+    "nameAr": "بلقرن",
+    "cCode": "10",
+    "id": 83,
+    "refId": null
+  },
+  {
+    "name": "Ahad Rafidah",
+    "nameAr": "أحد رفيدة",
+    "cCode": "11",
+    "id": 84,
+    "refId": null
+  },
+  {
+    "name": "Al Majardh",
+    "nameAr": "المجاردة",
+    "cCode": "12",
+    "id": 85,
+    "refId": null
+  },
+  {
+    "name": "Al Birk",
+    "nameAr": "البرك",
+    "cCode": "13",
+    "id": 86,
+    "refId": null
+  },
+  {
+    "name": "Bariq",
+    "nameAr": "بارق",
+    "cCode": "14",
+    "id": 87,
+    "refId": null
+  },
+  {
+    "name": "Tanumah",
+    "nameAr": "تنومة",
+    "cCode": "15",
+    "id": 88,
+    "refId": null
+  },
+  {
+    "name": "Atrib",
+    "nameAr": "طريب",
+    "cCode": "16",
+    "id": 89,
+    "refId": null
+  },
+  {
+    "name": "Tabuk",
+    "nameAr": "تبوك",
+    "cCode": "01",
+    "id": 90,
+    "refId": null
+  },
+  {
+    "name": "Al Wajh",
+    "nameAr": "الوجه",
+    "cCode": "02",
+    "id": 91,
+    "refId": null
+  },
+  {
+    "name": "Duba",
+    "nameAr": "ضبا",
+    "cCode": "03",
+    "id": 92,
+    "refId": null
+  },
+  {
+    "name": "Taima",
+    "nameAr": "تيماء",
+    "cCode": "04",
+    "id": 93,
+    "refId": null
+  },
+  {
+    "name": "Umluj",
+    "nameAr": "أملج",
+    "cCode": "05",
+    "id": 94,
+    "refId": null
+  },
+  {
+    "name": "Haql",
+    "nameAr": "حقل",
+    "cCode": "06",
+    "id": 95,
+    "refId": null
+  },
+  {
+    "name": "Al Bedea",
+    "nameAr": "البدع",
+    "cCode": "07",
+    "id": 96,
+    "refId": null
+  },
+  {
+    "name": "Hail",
+    "nameAr": "حائل",
+    "cCode": "01",
+    "id": 97,
+    "refId": null
+  },
+  {
+    "name": "Baqaa",
+    "nameAr": "بقعاء",
+    "cCode": "02",
+    "id": 98,
+    "refId": null
+  },
+  {
+    "name": "Al Ghazala",
+    "nameAr": "الغزالة",
+    "cCode": "03",
+    "id": 99,
+    "refId": null
+  },
+  {
+    "name": "Al Shinan",
+    "nameAr": "الشنان",
+    "cCode": "04",
+    "id": 100,
+    "refId": null
+  },
+  {
+    "name": "Al Hait",
+    "nameAr": "الحائط",
+    "cCode": "05",
+    "id": 101,
+    "refId": null
+  },
+  {
+    "name": "Al Slemy",
+    "nameAr": "السليمي",
+    "cCode": "06",
+    "id": 102,
+    "refId": null
+  },
+  {
+    "name": "Ash Shamli",
+    "nameAr": "الشملي",
+    "cCode": "07",
+    "id": 103,
+    "refId": null
+  },
+  {
+    "name": "Mawqaq",
+    "nameAr": "موقق",
+    "cCode": "08",
+    "id": 104,
+    "refId": null
+  },
+  {
+    "name": "Sumaira'a",
+    "nameAr": "سميراء",
+    "cCode": "09",
+    "id": 105,
+    "refId": null
+  },
+  {
+    "name": "Arar",
+    "nameAr": "عرعر",
+    "cCode": "01",
+    "id": 106,
+    "refId": null
+  },
+  {
+    "name": "Rafha",
+    "nameAr": "رفحاء",
+    "cCode": "02",
+    "id": 107,
+    "refId": null
+  },
+  {
+    "name": "Turaif",
+    "nameAr": "طريف",
+    "cCode": "03",
+    "id": 108,
+    "refId": null
+  },
+  {
+    "name": "Al Aoiqilh",
+    "nameAr": "العويقيلة",
+    "cCode": "04",
+    "id": 109,
+    "refId": null
+  },
+  {
+    "name": "Jazan",
+    "nameAr": "جازان",
+    "cCode": "01",
+    "id": 110,
+    "refId": null
+  },
+  {
+    "name": "Sabia",
+    "nameAr": "صبيا",
+    "cCode": "02",
+    "id": 111,
+    "refId": null
+  },
+  {
+    "name": "Abu Arish",
+    "nameAr": "أبو عريش",
+    "cCode": "03",
+    "id": 112,
+    "refId": null
+  },
+  {
+    "name": "Samtah",
+    "nameAr": "صامطة",
+    "cCode": "04",
+    "id": 113,
+    "refId": null
+  },
+  {
+    "name": "Baish",
+    "nameAr": "بيش",
+    "cCode": "05",
+    "id": 114,
+    "refId": null
+  },
+  {
+    "name": "Ad Darb",
+    "nameAr": "الدرب",
+    "cCode": "06",
+    "id": 115,
+    "refId": null
+  },
+  {
+    "name": "Al Harth",
+    "nameAr": "الحرث",
+    "cCode": "07",
+    "id": 116,
+    "refId": null
+  },
+  {
+    "name": "Damad",
+    "nameAr": "ضمد",
+    "cCode": "08",
+    "id": 117,
+    "refId": null
+  },
+  {
+    "name": "Al Reeth",
+    "nameAr": "الريث",
+    "cCode": "09",
+    "id": 118,
+    "refId": null
+  },
+  {
+    "name": "Farasan Islands",
+    "nameAr": "جزر فرسان",
+    "cCode": "10",
+    "id": 119,
+    "refId": null
+  },
+  {
+    "name": "Addayer",
+    "nameAr": "الدائر",
+    "cCode": "11",
+    "id": 120,
+    "refId": null
+  },
+  {
+    "name": "Al Ardha",
+    "nameAr": "العارضة",
+    "cCode": "12",
+    "id": 121,
+    "refId": null
+  },
+  {
+    "name": "Ahad al Masarihah",
+    "nameAr": "أحد المسارحة",
+    "cCode": "13",
+    "id": 122,
+    "refId": null
+  },
+  {
+    "name": "Alaidabi",
+    "nameAr": "العيدابي",
+    "cCode": "14",
+    "id": 123,
+    "refId": null
+  },
+  {
+    "name": "Faifa",
+    "nameAr": "فيفاء",
+    "cCode": "15",
+    "id": 124,
+    "refId": null
+  },
+  {
+    "name": "At Tuwal",
+    "nameAr": "الطوال",
+    "cCode": "16",
+    "id": 125,
+    "refId": null
+  },
+  {
+    "name": "Hroob",
+    "nameAr": "هروب",
+    "cCode": "17",
+    "id": 126,
+    "refId": null
+  },
+  {
+    "name": "Najran",
+    "nameAr": "نجران",
+    "cCode": "01",
+    "id": 127,
+    "refId": null
+  },
+  {
+    "name": "Sharourah",
+    "nameAr": "شرورة",
+    "cCode": "02",
+    "id": 128,
+    "refId": null
+  },
+  {
+    "name": "Hbuna",
+    "nameAr": "حبونا",
+    "cCode": "03",
+    "id": 129,
+    "refId": null
+  },
+  {
+    "name": "Badr Aljanoub",
+    "nameAr": "بدر الجنوب",
+    "cCode": "04",
+    "id": 130,
+    "refId": null
+  },
+  {
+    "name": "Yadma",
+    "nameAr": "يدمه",
+    "cCode": "05",
+    "id": 131,
+    "refId": null
+  },
+  {
+    "name": "Thar",
+    "nameAr": "ثار",
+    "cCode": "06",
+    "id": 132,
+    "refId": null
+  },
+  {
+    "name": "Khbash",
+    "nameAr": "خباش",
+    "cCode": "07",
+    "id": 133,
+    "refId": null
+  },
+  {
+    "name": "Al Kharkhir",
+    "nameAr": "الخرخير",
+    "cCode": "08",
+    "id": 134,
+    "refId": null
+  },
+  {
+    "name": "Baha",
+    "nameAr": "الباحة",
+    "cCode": "01",
+    "id": 135,
+    "refId": null
+  },
+  {
+    "name": "Baljurashi",
+    "nameAr": "بلجرشي",
+    "cCode": "02",
+    "id": 136,
+    "refId": null
+  },
+  {
+    "name": "Almandaq",
+    "nameAr": "المندق",
+    "cCode": "03",
+    "id": 137,
+    "refId": null
+  },
+  {
+    "name": "Al Makhwah",
+    "nameAr": "المخواة",
+    "cCode": "04",
+    "id": 138,
+    "refId": null
+  },
+  {
+    "name": "Qalwa",
+    "nameAr": "قلوة",
+    "cCode": "05",
+    "id": 139,
+    "refId": null
+  },
+  {
+    "name": "Alaqeq",
+    "nameAr": "العقيق",
+    "cCode": "06",
+    "id": 140,
+    "refId": null
+  },
+  {
+    "name": "AlQara",
+    "nameAr": "القرى",
+    "cCode": "07",
+    "id": 141,
+    "refId": null
+  },
+  {
+    "name": "Ghamid az Zanad",
+    "nameAr": "غامد الزناد",
+    "cCode": "08",
+    "id": 142,
+    "refId": null
+  },
+  {
+    "name": "Al Hajrah",
+    "nameAr": "الحجرة",
+    "cCode": "09",
+    "id": 143,
+    "refId": null
+  },
+  {
+    "name": "Bani Hasan ",
+    "nameAr": "بني حسن",
+    "cCode": "10",
+    "id": 144,
+    "refId": null
+  },
+  {
+    "name": "Sakaka",
+    "nameAr": "سكاكا",
+    "cCode": "01",
+    "id": 145,
+    "refId": null
+  },
+  {
+    "name": "Al Qurayyat",
+    "nameAr": "القريات",
+    "cCode": "02",
+    "id": 146,
+    "refId": null
+  },
+  {
+    "name": "Dumat Al-Jandal",
+    "nameAr": "دومة الجندل",
+    "cCode": "03",
+    "id": 147,
+    "refId": null
+  },
+  {
+    "name": "Tabarjal",
+    "nameAr": "طبرجل",
+    "cCode": "04",
+    "id": 148,
+    "refId": null
+  }
+]

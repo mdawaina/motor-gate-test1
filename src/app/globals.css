@@ -1,0 +1,39 @@
+.sidebar {
+  height: 100%;
+  /* position: fixed; */
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #f8f9fa;
+  padding-top: 20px;
+}
+.sidebar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+}
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.login-container {
+  max-width: 300px;
+  margin: auto;
+  margin-top: 100px;
+}
+.login-form {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* This is optional, only if you want to center the div vertically in the viewport */
+}
+
+.register-container {
+  max-width: 900px;
+  margin: auto;
+  margin-top: 100px;
+}
