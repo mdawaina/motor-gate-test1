@@ -1,13 +1,19 @@
 import agent from "@/api/agent";
-import { Service, Specialization } from "@/components/models/company";
+import {
+  FilterCompanyParams,
+  Service,
+  Specialization,
+} from "@/components/models/company";
 import { Sector } from "@/components/models/sector";
 import { useFormik } from "formik";
 import React, { useCallback, useEffect, useState } from "react";
 import { Dropdown, Button, Form, Col, Row, Card } from "react-bootstrap";
 import Select from "react-select";
 import * as yup from "yup";
-
-const SearchForm = () => {
+interface ChildProps {
+  onParamsChange: (params: FilterCompanyParams) => void;
+}
+const SearchForm = ({ onParamsChange }: ChildProps) => {
   const [pending, setPending] = useState<boolean>(false);
   const [sectors, setSectors] = useState<Sector[]>([]);
   const [services, setServices] = useState<Service[]>([]);
@@ -65,8 +71,17 @@ const SearchForm = () => {
       try {
         setPending(true);
         console.log(formik.values);
-
-        agent.Companies.filterCompanies({
+        onParamsChange({
+          searchTerm: formik.values.searchTerm,
+          pageNumber: 1,
+          pageSize: 10,
+          companyStatusId: null,
+          cityId: null,
+          sectorId: formik.values.sectorId,
+          specializationId: formik.values.specializationId,
+          servicesString: formik.values.services.join(","),
+        });
+        /*  agent.Companies.filterCompanies({
           searchTerm: formik.values.searchTerm,
           pageNumber: 1,
           pageSize: 10,
@@ -77,7 +92,7 @@ const SearchForm = () => {
           servicesString: formik.values.services.join(","),
         }).then((data) => {
           console.log(data);
-        });
+        }); */
 
         /*   agent.Companies.updateCompany(formik.values).then(() => {
           setPending(false);

@@ -29,6 +29,8 @@ import { getUser } from "@/util/getUser";
 import { WishListParams } from "@/components/models/wishList";
 import { CreateCustomerMotor } from "@/components/models/createCustomerMotor";
 import { LookupForCrete } from "@/components/models/lookups";
+import { Offer, OfferParams } from "@/components/models/offer";
+import { getOfferAxiosParams } from "@/api/offerAxios";
 //import { Attender } from "@/components/models/attender";
 //import { EvaluationQuestions } from "@/components/models/evaluation";
 
@@ -157,7 +159,10 @@ function getCompanyParams(companyParams: FilterCompanyParams) {
     params.append("sectorId", companyParams.sectorId.toString());
 
   if (companyParams.specializationId)
-    params.append("sectorId", companyParams.specializationId.toString());
+    params.append(
+      "specializationId",
+      companyParams.specializationId.toString()
+    );
 
   if (companyParams.servicesString)
     params.append("servicesString", companyParams.servicesString);
@@ -300,6 +305,17 @@ const Customers = {
     requests.post("customers/create_customer_motor", motor),
 };
 
+const Offers = {
+  addOffer: (values: Offer) => requests.post("offers/addoffer", values),
+  getOffers: (offerParams: OfferParams) => {
+    const params = getOfferAxiosParams(offerParams);
+    return requests.get(`offers/getoffers${params}`);
+  },
+  getOffer: (id: string) => requests.get(`offers/getoffer?id=${id}`),
+  updateOffer: (values: any) => requests.post("offers/updateoffer", values),
+  deleteOffer: (id: string) => requests.delete(`offers/deleteoffer?id=${id}`),
+};
+
 function createFormData(item: any) {
   let formData = new FormData();
   for (const key in item) {
@@ -314,6 +330,7 @@ const agent = {
   Dashboard,
   Motors,
   Customers,
+  Offers,
 };
 
 export default agent;

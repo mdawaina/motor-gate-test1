@@ -2,7 +2,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { Card, Row, Col, Button } from "react-bootstrap";
 import SearchForm from "./SearchForm";
-import { Company } from "@/components/models/company";
+import { Company, FilterCompanyParams } from "@/components/models/company";
 import { MetaData } from "@/components/models/pagination";
 import Pagination from "@/components/common/GPTPaginationComplex";
 import agent from "@/api/agent";
@@ -27,7 +27,22 @@ export const CompanyCards = () => {
 
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [addedToWishlist, setAddedToWishlist] = useState<string[]>([]);
-
+  const [count, setCount] = useState<number>(0);
+  const [searchParams, setSearchParams] = useState<FilterCompanyParams>({
+    searchTerm: "",
+    pageNumber: 1,
+    pageSize: 10,
+    companyStatusId: null,
+    cityId: null,
+    sectorId: null,
+    specializationId: null,
+    servicesString: "",
+  });
+  const onParamsChange = (newParams: FilterCompanyParams) => {
+    // setCount((prevCount) => prevCount + 1);
+    console.log(newParams);
+    setSearchParams(newParams);
+  };
   const [metaData, SetMetaData] = useState<MetaData>({
     currentPage: 1,
     pageSize: pageSize,
@@ -38,11 +53,13 @@ export const CompanyCards = () => {
   const LoadPageData = async (newPageIndex: number) => {
     try {
       setPending(true);
-      const dataResult = await agent.Companies.getCompanies({
+      /*  const dataResult = await agent.Companies.getCompanies({
         searchTerm: searchTerm,
         pageNumber: newPageIndex,
         pageSize: pageSize,
-      });
+      }); */
+
+      const dataResult = await agent.Companies.filterCompanies(searchParams);
       SetMetaData(dataResult.metaData);
 
       setCompanies(dataResult.items);
@@ -55,7 +72,7 @@ export const CompanyCards = () => {
 
   const initPage = useCallback(async () => {
     await LoadPageData(metaData.currentPage);
-  }, [metaData.currentPage, searchTerm]);
+  }, [metaData.currentPage, searchTerm, searchParams]);
 
   useEffect(() => {
     initPage();
@@ -114,7 +131,7 @@ export const CompanyCards = () => {
 
   return (
     <div className="container">
-      <SearchForm />
+      <SearchForm onParamsChange={onParamsChange} />
       <Row>
         {(companies || []).map((company, index) => (
           <Col md={4} key={index}>
@@ -124,7 +141,9 @@ export const CompanyCards = () => {
               </Card.Header>
               <Card.Body>
                 <Card.Text>
-                  <p>Company Name: {company.name}</p>
+                  <p>
+                    Company Name: {company.name} {count}
+                  </p>
                   Company Sectors:
                   <ul>
                     {company?.sectors?.map((sector) => (

@@ -54,6 +54,7 @@ export const Sidebar = () => {
           <Link href={`/companies/${companyRefId}`}>Company Profile </Link>
           <Link href="/account/profile">User Profile</Link>
           <Link href="/motors">Motors List</Link>
+          <Link href="/offers">Offers</Link>
           <a style={{ cursor: "pointer" }} onClick={() => logout()}>
             Logout
           </a>
