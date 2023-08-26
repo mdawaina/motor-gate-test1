@@ -259,7 +259,7 @@ const Motors = {
   },
   getCustomerMotors: (companyParams: MotorParams) => {
     const params = getAxiosParams(companyParams);
-    return requests.get(`motors/getcustomermotors?${params}`);
+    return requests.get(`customers/get_motors`);
   },
 };
 
@@ -294,6 +294,7 @@ const Lookups = {
   addBrand: (brand: {}) => requests.post("lookups/addbrand", brand),
   postModel: (values: any) => requests.post("lookups/addmodel", values),
   postMotorYear: (values: any) => requests.post("lookups/addmotoryear", values),
+  getColors: () => requests.get("lookups/colors"),
 };
 
 const Dashboard = {
@@ -302,14 +303,14 @@ const Dashboard = {
 
 const Customers = {
   createCustomerMotor: (motor: CreateCustomerMotor) =>
-    requests.post("customers/create_customer_motor", motor),
+    requests.post("customers/add_motor", motor),
 };
 
 const Offers = {
   addOffer: (values: Offer) => requests.post("offers/addoffer", values),
   getOffers: (offerParams: OfferParams) => {
     const params = getOfferAxiosParams(offerParams);
-    return requests.get(`offers/getoffers${params}`);
+    return requests.get(`offers/companyOffers?${params}`);
   },
   getOffer: (id: string) => requests.get(`offers/getoffer?id=${id}`),
   updateOffer: (values: any) => requests.post("offers/updateoffer", values),

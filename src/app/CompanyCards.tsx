@@ -11,15 +11,6 @@ import { getUser } from "@/util/getUser";
 import { useRouter } from "next/navigation";
 
 export const CompanyCards = () => {
-  const cardsData = [
-    { companyName: "CompanyName 1", dateCreated: "2023-01-01" },
-    { companyName: "CompanyName 2", dateCreated: "2023-02-15" },
-    { companyName: "CompanyName 3", dateCreated: "2023-03-21" },
-    { companyName: "CompanyName 4", dateCreated: "2023-04-10" },
-    { companyName: "CompanyName 5", dateCreated: "2023-05-05" },
-    { companyName: "CompanyName 6", dateCreated: "2023-06-30" },
-  ];
-
   const pageSize = 10;
 
   const [pending, setPending] = useState<boolean>(false);
@@ -44,7 +35,7 @@ export const CompanyCards = () => {
     setSearchParams(newParams);
   };
   const [metaData, SetMetaData] = useState<MetaData>({
-    currentPage: 1,
+    pageNumber: 1,
     pageSize: pageSize,
     totalCount: 0,
     totalPages: 0,
@@ -53,11 +44,6 @@ export const CompanyCards = () => {
   const LoadPageData = async (newPageIndex: number) => {
     try {
       setPending(true);
-      /*  const dataResult = await agent.Companies.getCompanies({
-        searchTerm: searchTerm,
-        pageNumber: newPageIndex,
-        pageSize: pageSize,
-      }); */
 
       const dataResult = await agent.Companies.filterCompanies(searchParams);
       SetMetaData(dataResult.metaData);
@@ -71,15 +57,15 @@ export const CompanyCards = () => {
   };
 
   const initPage = useCallback(async () => {
-    await LoadPageData(metaData.currentPage);
-  }, [metaData.currentPage, searchTerm, searchParams]);
+    await LoadPageData(metaData.pageNumber);
+  }, [metaData.pageNumber, searchTerm, searchParams]);
 
   useEffect(() => {
     initPage();
   }, [initPage]);
   const handlePageChange = useCallback(
     (page: number) => {
-      SetMetaData({ ...metaData, currentPage: page });
+      SetMetaData({ ...metaData, pageNumber: page });
     },
     [metaData]
   );
@@ -92,14 +78,9 @@ export const CompanyCards = () => {
   const router = useRouter();
 
   const onAddToWishList = async (companyId: string) => {
-    /*  if (getUser() === null) {
-      console.log("user is null");
-      router.push("/login");
-    } */
-
     // Assuming addToWishList is an async function, await its response
     const response = await agent.Companies.addToWishList(companyId);
-    await LoadPageData(metaData.currentPage);
+    await LoadPageData(metaData.pageNumber);
     if (response /* and any other condition to check if it's successful */) {
       // Add the refId to the addedToWishlist array
       setAddedToWishlist((prevState) => [...prevState, companyId]);
@@ -109,7 +90,7 @@ export const CompanyCards = () => {
   const onRemoveFromWishList = async (companyId: string) => {
     // Assuming removeFromWishList is an async function, await its response
     const response = await agent.Companies.removeFromWishList(companyId);
-    await LoadPageData(metaData.currentPage);
+    await LoadPageData(metaData.pageNumber);
     if (response /* and any other condition to check if it's successful */) {
       // Remove the refId from the addedToWishlist array
       setAddedToWishlist((prevState) =>
@@ -121,17 +102,23 @@ export const CompanyCards = () => {
     async (companyId: string) => {
       try {
         await agent.Companies.addToWishList(companyId);
-        await LoadPageData(metaData.currentPage);
+        await LoadPageData(metaData.pageNumber);
       } catch (error) {
         console.log(error);
       }
     },
-    [metaData.currentPage]
+    [metaData.pageNumber]
   );
 
   return (
     <div className="container">
       <SearchForm onParamsChange={onParamsChange} />
+
+      <div className="row">
+        <div className="col-12">
+          <h1>Service Providers</h1>
+        </div>
+      </div>
       <Row>
         {(companies || []).map((company, index) => (
           <Col md={4} key={index}>

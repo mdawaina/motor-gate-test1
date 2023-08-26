@@ -6,6 +6,7 @@ import { useState } from "react";
 import { CompanyCards } from "./CompanyCards";
 import { getUser } from "@/util/getUser";
 import Cookies from "js-cookie";
+import { OfferCards } from "./offers/OfferCards";
 
 export default function Home() {
   const [show, setShow] = useState(false);
@@ -93,21 +94,11 @@ export default function Home() {
               Go somewhere
             </a>
           </div>
-
-          {/*  <div className="card">
-          <div className="card-body">
-            <h5 className="card-title">Motor Gate</h5>
-            <p className="card-text">
-              Motor Gate is a platform that allows you to manage your vehicles
-              and their maintenance.
-            </p>
-            <a href="#" className="btn btn-primary">
-              Go somewhere
-            </a>
-          </div>
-        </div> */}
         </div>
+
         <CompanyCards />
+
+        <OfferCards />
       </div>
     </>
   );

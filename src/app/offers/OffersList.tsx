@@ -13,15 +13,15 @@ const OffersList = () => {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [offers, setOffers] = useState<Offer[]>([]); // Offer
   const [metaData, SetMetaData] = useState<MetaData>({
-    currentPage: 1,
+    pageNumber: 1,
     pageSize: pageSize,
     totalCount: 0,
     totalPages: 0,
   });
 
   const initPage = useCallback(async () => {
-    await LoadPageData(metaData.currentPage);
-  }, [metaData.currentPage]);
+    await LoadPageData(metaData.pageNumber);
+  }, [metaData.pageNumber]);
 
   useEffect(() => {
     initPage();
@@ -32,10 +32,11 @@ const OffersList = () => {
       setPending(true);
       const dataResult = await agent.Offers.getOffers({
         searchTerm: searchTerm,
-        currentPage: newPageIndex,
+        pageNumber: newPageIndex,
         pageSize: pageSize,
         totalCount: 0,
         totalPages: 0,
+        source: "Panel",
       });
       SetMetaData(dataResult.metaData);
 

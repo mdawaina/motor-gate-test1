@@ -81,25 +81,6 @@ const SearchForm = ({ onParamsChange }: ChildProps) => {
           specializationId: formik.values.specializationId,
           servicesString: formik.values.services.join(","),
         });
-        /*  agent.Companies.filterCompanies({
-          searchTerm: formik.values.searchTerm,
-          pageNumber: 1,
-          pageSize: 10,
-          companyStatusId: null,
-          cityId: null,
-          sectorId: formik.values.sectorId,
-          specializationId: formik.values.specializationId,
-          servicesString: formik.values.services.join(","),
-        }).then((data) => {
-          console.log(data);
-        }); */
-
-        /*   agent.Companies.updateCompany(formik.values).then(() => {
-          setPending(false);
-          toast.success("تم تحديث بيانات المنشأة ");
-          router.push(`/companies/${params.slog}`);
-        }); */
-        //setSubmitted(true);
       } catch (error) {
         console.log(error);
       }

@@ -14,7 +14,7 @@ export const CustomerMotors = () => {
 
   const pageSize = 5;
   const [metaData, SetMetaData] = useState<MetaData>({
-    currentPage: 1,
+    pageNumber: 1,
     pageSize: pageSize,
     totalCount: 0,
     totalPages: 0,
@@ -24,8 +24,8 @@ export const CustomerMotors = () => {
   const [searchTerm, setSearchTerm] = useState<string>("");
 
   const initPage = useCallback(async () => {
-    await LoadPageData(metaData.currentPage);
-  }, [metaData.currentPage, searchTerm]);
+    await LoadPageData(metaData.pageNumber);
+  }, [metaData.pageNumber, searchTerm]);
   const LoadPageData = async (newPageIndex: number) => {
     console.log("test 44");
     try {
@@ -50,7 +50,7 @@ export const CustomerMotors = () => {
   }, [initPage]);
   const handlePageChange = useCallback(
     (page: number) => {
-      SetMetaData({ ...metaData, currentPage: page });
+      SetMetaData({ ...metaData, pageNumber: page });
     },
     [metaData]
   );
@@ -88,7 +88,7 @@ export const CustomerMotors = () => {
 
       <div className="row">
         <div className="col-12">
-          <h5>Customers Motors</h5>
+          <h5>The Garage</h5>
         </div>
         <Link
           href="/account/motors/CreateCustomerMotor"
@@ -111,14 +111,15 @@ export const CustomerMotors = () => {
         </div>
       </div>
       <div>
-        <h5>Customer Motors</h5>
+        <h5>The Garage</h5>
         <table className="table">
           <thead>
             <tr>
               <th>Id</th>
               <th>ChassisNo</th>
               <th>Plate No</th>
-              <th>Year</th>
+              <th>Model & Year</th>
+              <th>Color</th>
             </tr>
           </thead>
           <tbody>
@@ -128,10 +129,11 @@ export const CustomerMotors = () => {
                 <td>{motor?.chassisNo}</td>
                 <td>{motor?.plateNo}</td>
                 <td>
-                  {motor?.motorYear?.name}
-                  {motor?.motorYear?.model.name}
+                  {motor?.motorYear?.name} {`-`}
+                  {motor?.motorYear?.model.name} {`-`}
                   {motor?.motorYear?.model.brand.name}
                 </td>
+                <td>{motor?.motorColor?.name}</td>
                 <td>
                   {/* <button className="btn btn-primary">Edit</button> */}
                   <button className="btn btn-danger">Delete</button>

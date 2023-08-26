@@ -10,4 +10,5 @@ export interface Offer {
 
 export interface OfferParams extends MetaData {
   searchTerm: string;
+  source: string;
 }

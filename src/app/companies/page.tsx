@@ -16,15 +16,15 @@ function Companies() {
   const [searchTerm, setSearchTerm] = useState<string>("");
 
   const [metaData, SetMetaData] = useState<MetaData>({
-    currentPage: 1,
+    pageNumber: 1,
     pageSize: pageSize,
     totalCount: 0,
     totalPages: 0,
   });
 
   const initPage = useCallback(async () => {
-    await LoadPageData(metaData.currentPage);
-  }, [metaData.currentPage, searchTerm]);
+    await LoadPageData(metaData.pageNumber);
+  }, [metaData.pageNumber, searchTerm]);
 
   useEffect(() => {
     initPage();
@@ -76,7 +76,7 @@ function Companies() {
               <tr>
                 <th>Name</th>
                 <th>Address</th>
-                <th>City</th>
+                {/* <th>City</th> */}
                 <th>Country</th>
                 <th></th>
               </tr>
@@ -100,7 +100,7 @@ function Companies() {
                   <tr key={company.id}>
                     <td>{company.name}</td>
                     <td>{company.address}</td>
-                    <td>{company.city.name}</td>
+                    {/* <td>{company.city.name}</td> */}
                     <td>{company.address}</td>
                     <td>
                       <Link href={`/companies/${company.refId}`}>

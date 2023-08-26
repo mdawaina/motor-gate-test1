@@ -1,4 +1,5 @@
 import { CompanyMotorYear } from "./companyMotorYearForCreate";
+import { MotorColor } from "./motorColor";
 
 export interface Brand {
   id: number;
@@ -38,6 +39,8 @@ export interface CustomerMotor {
   plateNo: string;
   motorYearId: number;
   motorYear: MotorYear;
+  motorcolorId: number;
+  motorColor: MotorColor;
 }
 
 export interface AdminMotor {

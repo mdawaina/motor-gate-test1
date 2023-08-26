@@ -2,6 +2,7 @@ import agent from "@/api/agent";
 import { CreateCustomerMotor } from "@/components/models/createCustomerMotor";
 import { Brand } from "@/components/models/motors";
 import { useFormik } from "formik";
+import { set } from "lodash";
 import { useRouter } from "next/navigation";
 import React, { useCallback, useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
@@ -12,6 +13,7 @@ import * as yup from "yup";
 
 function CreateMotor() {
   const [brands, setBrands] = useState<Brand[]>([]);
+  const [colors, setColoes] = useState<Brand[]>([]);
   const [pending, setPending] = useState(false);
   const [modelsLookup, setModelsLookup] = useState<
     { label: string; value: number }[]
@@ -30,9 +32,18 @@ function CreateMotor() {
     };
   });
 
+  const colorsLookup = colors?.map((item) => {
+    return {
+      label: item.name,
+      value: item.id,
+    };
+  });
+
   const initPage = useCallback(async () => {
     const brandsResult = await agent.Lookups.getBrands();
+    const colorsResult = await agent.Lookups.getColors();
     setBrands(brandsResult);
+    setColoes(colorsResult);
   }, []);
 
   useEffect(() => {
@@ -57,7 +68,7 @@ function CreateMotor() {
         ).then(() => {
           setPending(false);
           toast.success("تم التسجيل بنجاح");
-          router.push("/login");
+          router.push("/account/motors");
         });
         //setSubmitted(true);
       } catch (error) {
@@ -211,6 +222,29 @@ function CreateMotor() {
             />
             {formik.errors.brandId && (
               <div className="text-danger">{formik.errors.brandId}</div>
+            )}
+          </div>
+
+          <div className="col-md-6 mb-3">
+            <label htmlFor="motorColorId" className="form-label">
+              Color
+            </label>
+            <Select
+              id="motorColorId"
+              options={colorsLookup}
+              placeholder="اختر"
+              onChange={(option) => {
+                formik.setFieldValue("motorColorId", option?.value);
+              }}
+              value={
+                colorsLookup.find(
+                  (option) => option.value === formik.values.motorColorId
+                ) as PropsValue<{ label: string; value: number }>
+              }
+              onBlur={formik.handleBlur("motorColorId")}
+            />
+            {formik.errors.motorColorId && (
+              <div className="text-danger">{formik.errors.motorColorId}</div>
             )}
           </div>
         </div>
