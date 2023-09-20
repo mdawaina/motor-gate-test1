@@ -10,6 +10,8 @@ import React, { useState } from "react";
 import { Spinner } from "react-bootstrap";
 import * as yup from "yup";
 import Cookies from "js-cookie";
+import { set } from "lodash";
+import { toast } from "react-toastify";
 
 //import style from "./styles.css";
 function Login() {
@@ -19,11 +21,20 @@ function Login() {
   const router = useRouter();
 
   const validate = async (values: LoginUser) => {
-    const user = await agent.Account.login(values);
-    if (user) {
-      Cookies.set("currentUser", JSON.stringify(user));
+    try {
+      const response = await agent.Account.login(values);
+
+      if (response) {
+        Cookies.set("currentUser", JSON.stringify(response));
+        setPending(false);
+        return response as LoginUser;
+      }
+    } catch (error) {
+      toast.error("خطأ في تسجيل الدخول");
+      setPending(false);
+      console.log(error);
     }
-    return user as LoginUser;
+    //return null;
   };
 
   const formik = useFormik({
@@ -42,7 +53,7 @@ function Login() {
           if (user) {
             dispatch(setUser(user));
             setPending(false);
-            router.push("/account/profile");
+            router.push("/account/dashboard");
           }
         });
       } catch (error) {

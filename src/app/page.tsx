@@ -60,13 +60,13 @@ export default function Home() {
           <Modal.Body>
             <p>Choose your registration type:</p>
             <Row>
-              <Col>
+              {/*  <Col>
                 <Link href="/account/register/individual">
                   <Button variant="primary" onClick={handleClose}>
                     Register as Individual
                   </Button>
                 </Link>
-              </Col>
+              </Col> */}
               <Col>
                 <Link href="/register" className="btn btn-pramiry">
                   <Button variant="primary">Register as Company</Button>
@@ -84,7 +84,7 @@ export default function Home() {
 
         {/* write html for card */}
         <div className="card">
-          <div className="card-body">
+          {/*  <div className="card-body">
             <h5 className="card-title">Motor Gate</h5>
             <p className="card-text">
               Motor Gate is a platform that allows you to manage your vehicles
@@ -93,7 +93,7 @@ export default function Home() {
             <a href="#" className="btn btn-primary">
               Go somewhere
             </a>
-          </div>
+          </div> */}
         </div>
 
         <CompanyCards />

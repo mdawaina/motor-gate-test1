@@ -8,10 +8,15 @@ import Link from "next/link";
 import React, { useCallback, useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
 import { CompanyMotors } from "./CompanyMotors";
+import { User } from "@/components/models/loginUser";
+import { getUser } from "@/util/getUser";
+import { ro } from "date-fns/locale";
 
 function CompanyDetail({ params }: any) {
   const [pending, setPending] = useState<boolean>(false);
   const [company, setCompany] = useState<Company | null>(null);
+
+  var { roles, companyRefId }: User = getUser() as User;
 
   const initPage = useCallback(async () => {
     try {
@@ -67,8 +72,8 @@ function CompanyDetail({ params }: any) {
               {/*   Specialization Name:
               <p>{company?.specialization?.name}</p> */}
               {/** show companyStatus name of the copany with label */}
-              Company Status:
-              <p>{company?.companyStatus?.name}</p>
+              {/*  Company Status:
+              <p>{company?.companyStatus?.name}</p> */}
               Company Sectors:
               <ul>
                 {company?.sectors?.map((sector) => (
@@ -104,23 +109,11 @@ function CompanyDetail({ params }: any) {
             </div>
           </div>
 
-          {/*  <div className="row">
-            <div className="col-12">
-              <h1>{company?.name}</h1>
-              <p>{company?.city?.name}</p>
-              <p>{company?.vATRegNumber}</p>
-              <p>{company?.cr}</p>
-              <p>{company?.address}</p>
-              <p>{company?.specialization?.name}</p>
-              <p>{company?.companyStatus?.name}</p>
-              created at :{" "}
-              <p>{format(new Date(company?.createdOn), "dd/MM/yyyy")}</p>
-            </div>
-          </div> */}
-          {/** show edit company link */}
           <div className="row">
             <div className="col-12">
-              <Link href={`/companies/${params.slog}/edit`}>Edit</Link>
+              {roles?.includes("Company") && (
+                <Link href={`/companies/${params.slog}/edit`}>Edit</Link>
+              )}
             </div>
           </div>
         </>

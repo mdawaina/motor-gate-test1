@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import { Providers } from "./redux/provider";
 import { getUser } from "@/util/getUser";
-import { ToastContainer } from "react-toastify";
+import ToastProvider from "./ToastProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,12 +22,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Providers>{children}</Providers>
-        <ToastContainer
-          position="bottom-right"
-          hideProgressBar
-          theme="colored"
-        />
+        <ToastProvider>
+          <div className="test">
+            <Providers>{children}</Providers>
+          </div>
+        </ToastProvider>
       </body>
     </html>
   );

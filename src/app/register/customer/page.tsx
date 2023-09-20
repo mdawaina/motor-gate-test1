@@ -4,11 +4,15 @@ import React, { useState } from "react";
 import * as yup from "yup";
 import { useFormik } from "formik";
 import agent from "@/api/agent";
-import { RegisterModel } from "@/components/models/registerModel";
+import {
+  RegisterCustomerModel,
+  RegisterModel,
+} from "@/components/models/registerModel";
 import { toast } from "react-toastify";
 import { Spinner } from "react-bootstrap";
 import Select from "react-select";
 import cities from "../../../data/cities.json";
+import { set } from "lodash";
 
 function RegisterCustomer() {
   const [pending, setPending] = useState(false);
@@ -23,7 +27,7 @@ function RegisterCustomer() {
 
   const formik = useFormik({
     initialValues: {
-      id: 0,
+      id: "",
       email: "",
       password: "",
       displayName: "",
@@ -35,15 +39,16 @@ function RegisterCustomer() {
       try {
         setPending(true);
         console.log(formik.values);
-        agent.Account.registerCustomer(formik.values as RegisterModel).then(
-          () => {
-            setPending(false);
-            toast.success("تم التسجيل بنجاح");
-            router.push("/login");
-          }
-        );
+        agent.Account.registerCustomer(
+          formik.values as RegisterCustomerModel
+        ).then(() => {
+          setPending(false);
+          toast.success("تم التسجيل بنجاح");
+          router.push("/login");
+        });
         //setSubmitted(true);
       } catch (error) {
+        setPending(false);
         console.log(error);
       }
     },
@@ -58,7 +63,7 @@ function RegisterCustomer() {
         .required("الحقل مطلوب"),
       password: yup.string().trim().required("الحقل مطلوب"),
       displayName: yup.string().trim().required("الحقل مطلوب"),
-      name: yup.string().trim().required("الحقل مطلوب"),
+
       cityId: yup.number().typeError("المدينة مطلوب").required("الحقل مطلوب"),
 
       mobileNumber: yup
@@ -83,6 +88,7 @@ function RegisterCustomer() {
               type="email"
               className="form-control"
               id="email"
+              name="email"
               aria-describedby="emailHelp"
               value={formik.values.email}
               onChange={formik.handleChange}
@@ -93,12 +99,13 @@ function RegisterCustomer() {
             )}
           </div>
           <div className="col-md-6 mb-3">
-            <label htmlFor="email" className="form-label">
+            <label htmlFor="password" className="form-label">
               Password
             </label>
             <input
               type="password"
               className="form-control"
+              name="password"
               id="password"
               value={formik.values.password}
               onChange={formik.handleChange}
@@ -112,11 +119,12 @@ function RegisterCustomer() {
         <div className="row">
           <div className="col-md-6 mb-3">
             <label htmlFor="displayName" className="form-label">
-              Registrar Name
+              Display Name
             </label>
             <input
               type="text"
               className="form-control"
+              name="displayName"
               id="displayName"
               value={formik.values.displayName}
               onChange={formik.handleChange}
@@ -126,6 +134,8 @@ function RegisterCustomer() {
               <div className="text-danger">{formik.errors.displayName}</div>
             )}
           </div>
+        </div>
+        {/*}
           <div className="col-md-6 mb-3">
             <label htmlFor="name" className="form-label">
               Company Name
@@ -143,14 +153,16 @@ function RegisterCustomer() {
             )}
           </div>
         </div>
+ */}
 
         <div className="row">
           <div className="col-md-6 mb-3">
-            <label htmlFor="city" className="form-label">
+            <label htmlFor="cityId" className="form-label">
               City
             </label>
             <Select
-              id="jobId"
+              name="cityId"
+              id="cityId"
               options={citiesLookup}
               placeholder="اختر"
               onChange={(option) =>
@@ -175,6 +187,7 @@ function RegisterCustomer() {
             <input
               type="tel"
               className="form-control"
+              name="mobileNumber"
               id="mobileNumber"
               value={formik.values.mobileNumber}
               onChange={formik.handleChange}
@@ -184,24 +197,9 @@ function RegisterCustomer() {
               <div className="text-danger">{formik.errors.mobileNumber}</div>
             )}
           </div>
-          <div className="col-md-6 mb-3">
-            {/*  <label htmlFor="region" className="form-label">
-              Region
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="region"
-              value={formik.values.region}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-            />
-            {formik.errors.region && (
-              <div className="text-danger">{formik.errors.region}</div>
-            )} */}
-          </div>
+          <div className="col-md-6 mb-3"></div>
         </div>
-
+        {/* 
         <div className="row">
           <div className="col-md-6 mb-3">
             <label className="form-label">Are you an:</label>
@@ -233,7 +231,7 @@ function RegisterCustomer() {
               </label>
             </div>
           </div>
-        </div>
+        </div> */}
         <button type="submit" className="btn btn-primary">
           {pending && (
             <Spinner

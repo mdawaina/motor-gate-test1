@@ -9,6 +9,8 @@ import agent from "@/api/agent";
 import Link from "next/link";
 import { getUser } from "@/util/getUser";
 import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
+import { CompanyModal } from "./CompanyModal";
 
 export const CompanyCards = () => {
   const pageSize = 10;
@@ -19,6 +21,7 @@ export const CompanyCards = () => {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [addedToWishlist, setAddedToWishlist] = useState<string[]>([]);
   const [count, setCount] = useState<number>(0);
+  const [companyId, setCompanyId] = useState<string>("");
   const [searchParams, setSearchParams] = useState<FilterCompanyParams>({
     searchTerm: "",
     pageNumber: 1,
@@ -29,6 +32,12 @@ export const CompanyCards = () => {
     specializationId: null,
     servicesString: "",
   });
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   const onParamsChange = (newParams: FilterCompanyParams) => {
     // setCount((prevCount) => prevCount + 1);
     console.log(newParams);
@@ -58,6 +67,9 @@ export const CompanyCards = () => {
 
   const initPage = useCallback(async () => {
     await LoadPageData(metaData.pageNumber);
+    /*  await agent.Companies.getWishList().then((response) => {
+      setAddedToWishlist(response);
+    } */
   }, [metaData.pageNumber, searchTerm, searchParams]);
 
   useEffect(() => {
@@ -78,6 +90,12 @@ export const CompanyCards = () => {
   const router = useRouter();
 
   const onAddToWishList = async (companyId: string) => {
+    var user = getUser();
+    if (!user) {
+      toast.error("يجب تسجيل الدخول لتتمكن من اضافة الشركة الى قائمة الرغبات");
+      return;
+    }
+
     // Assuming addToWishList is an async function, await its response
     const response = await agent.Companies.addToWishList(companyId);
     await LoadPageData(metaData.pageNumber);
@@ -160,17 +178,26 @@ export const CompanyCards = () => {
                           Add To Wish List
                         </Button>
                       ) : (
-                        <span>Added to wishlist1</span>
+                        <span>Added to wishlist</span>
                       )}
                     </div>
                   )}
+                  <Button
+                    variant="link"
+                    onClick={() => {
+                      setCompanyId(company.refId);
+                      setShow(true);
+                    }}
+                  >
+                    View
+                  </Button>
                 </Card.Text>
               </Card.Body>
             </Card>
           </Col>
         ))}
       </Row>
-
+      <CompanyModal show={show} setShow={setShow} companyId={companyId} />
       <Pagination metaData={metaData} onPageChange={handlePageChange} />
     </div>
   );

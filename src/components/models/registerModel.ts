@@ -15,7 +15,7 @@ export interface RegisterModel {
 }
 
 export interface RegisterCustomerModel {
-  id: number;
+  id: string;
   email: string;
   password: string;
   displayName: string;

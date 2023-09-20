@@ -8,7 +8,7 @@ export function getUser() {
   const userString = Cookies.get("currentUser");
   if (!userString) return null;
   const dispatch = useAppDispatch();
-
+  console.log(userString);
   const user = JSON.parse(userString as string);
 
   //const decoded = jwt.verify(user.token, "super secret key");

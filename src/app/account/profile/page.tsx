@@ -59,8 +59,7 @@ function UserProfile() {
               <p>{user?.mobileNumber}</p>
               Registration Date:
               <p>{user?.createdOn}</p>
-              {/** show link for change password and one for profile edit */}
-              <Link href="/account/profile/edit" className="btn btn-primary">
+              {/*  <Link href="/account/profile/edit" className="btn btn-primary">
                 Edit Profile
               </Link>
               <Link
@@ -68,7 +67,7 @@ function UserProfile() {
                 className="btn btn-primary"
               >
                 Change Password
-              </Link>
+              </Link> */}
             </div>
           </div>
         </>

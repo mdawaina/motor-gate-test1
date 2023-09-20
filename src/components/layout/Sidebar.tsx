@@ -35,11 +35,11 @@ export const Sidebar = () => {
     <div className="col-2 sidebar">
       {roles?.includes("Admin") && (
         <>
+          <Link href="/account/dashboard">Dashboard</Link>
           <Link href="/">Home</Link>
           <Link href="/companies">Companies</Link>
-          <Link href="/home/services">Services</Link>
-          <Link href="/account/dashboard">Dashboard</Link>
-          <Link href="/motors/brands">Brands/Models</Link>
+          {/* <Link href="/home/services">Services</Link> */}
+          <Link href="/motors/brands">Content</Link>
           <Link href="/account/profile">User Profile</Link>
           <a style={{ cursor: "pointer" }} onClick={() => logout()}>
             Logout
@@ -50,11 +50,13 @@ export const Sidebar = () => {
       {roles?.includes("Company") && (
         <>
           <Link href="/">Home</Link>
+          <Link href="/account/dashboard">Dashboard</Link>
 
-          <Link href={`/companies/${companyRefId}`}>Company Profile </Link>
-          <Link href="/account/profile">User Profile</Link>
           <Link href="/motors">Motors List</Link>
           <Link href="/offers">Offers</Link>
+          <Link href={`/companies/${companyRefId}`}>Company Profile </Link>
+          <Link href={`/account/bracnhes`}> Branches </Link>
+          <Link href="/account/profile">User Profile</Link>
           <a style={{ cursor: "pointer" }} onClick={() => logout()}>
             Logout
           </a>

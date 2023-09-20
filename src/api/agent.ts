@@ -245,6 +245,16 @@ const Companies = {
   },
 };
 
+const Branches = {
+  getBranches: (companyId: number) =>
+    requests.get(`branches/getbranches/${companyId}`),
+  getBranch: (id: string) => requests.get(`branches/getbranch?id=${id}`),
+  createBranch: (values: any) => requests.post("branches/addbranch", values),
+  updateBranch: (values: any) => requests.post("branches/updatebranch", values),
+  deleteBranch: (id: string) =>
+    requests.delete(`branches/deletebranch?id=${id}`),
+};
+
 const Motors = {
   getMotors: () => {
     //const params = getAxiosParams(motorParams);
@@ -298,7 +308,7 @@ const Lookups = {
 };
 
 const Dashboard = {
-  getStatistics: () => requests.get("dashboard/index"),
+  getDashboardCounts: () => requests.get("dashboard/get_dashboard_stats"),
 };
 
 const Customers = {
@@ -332,6 +342,7 @@ const agent = {
   Motors,
   Customers,
   Offers,
+  Branches,
 };
 
 export default agent;
